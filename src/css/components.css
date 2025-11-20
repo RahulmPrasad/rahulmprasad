@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap');
+
+body {
+  background: #fff;
+  margin: 0;
+}
+
+/* MAIN SIDEBAR */
+.sidebar {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 70px;
+  height: calc(100vh - 40px);
+  background: linear-gradient(to right, #e52d27, #b31217);
+  color: white;
+  transition: 
+    width 0.4s ease,
+    background 0.4s ease,
+    border-radius 0.4s ease;
+
+  overflow: hidden;
+  padding-top: 20px;
+  border-radius: 10px;
+}
+
+/* SIDEBAR OPEN */
+.sidebar.open {
+  width: 230px;
+  background: #f7f7f7;
+  border-radius: 14px;
+  height: calc(100vh - 40px);
+}
+
+/* LIST */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 50px;
+  padding: 14px;
+}
+
+/* MENU ITEM */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  padding: 15px 10px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.4s ease, color 0.4s ease, padding-left 0.4s ease;
+}
+
+.logo {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.logo img{
+  width: 80px;
+}
+
+.logo p{
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Hover background (valid CSS, no gradient border) */
+.menu-item:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+
+.sidebar.open .menu-item{
+  justify-content: start;
+  transition: all 0.4s ease;
+}
+
+.sidebar.open .logo {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* TEXT COLOR changes only when open */
+.sidebar.open .menu-item:hover span {
+  color: #000;
+}
+
+/* ICON STYLES */
+.icon {
+  font-size: 24px;
+  transition: 
+    color 0.4s ease,
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.sidebar.open .icon {
+  color: #cccccc;
+}
+
+/* HOVER ICON EFFECT ONLY WHEN SIDEBAR IS OPEN */
+.sidebar.open .menu-item:hover .icon {
+  transform: translateX(3px);
+  opacity: 0.9;
+  color: #e52d27;
+}
+
+/* .sidebar.open .menu-item:hover .icon {
+  border-left: 5px solid #a51808;
+} */
+
+/* LABEL TEXT */
+.menu-text {
+  white-space: nowrap;
+  opacity: 0;
+  font-size: 18px;
+  transform: translateX(-10px);
+  transition: 
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* TEXT VISIBLE WHEN OPEN */
+.sidebar.open .menu-text {
+  opacity: 1;
+  color: #cccccc;
+  transform: translateX(0);
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+  position: absolute;
+  top: 15px;
+  right: -20px;
+  background: #1e1e2f;
+  padding: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  line-height: 1;
+  border: 1px solid #333;
+}
+
